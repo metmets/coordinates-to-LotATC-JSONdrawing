@@ -5,42 +5,18 @@ linewidth = 1
 #-------------------------------------------------
 import json
 class teisendus:
-    def dd(x): #Koordinaatide teisendus DDMMSS -> DD(Decimal Degrees)
-        n=0
-        n1=0
-        for el in x:
-            for b in range(len(x[n1])):
-                x[n1][n] = ((x[n1][n]/100 - x[n1][n]//100))*(5/3) + x[n1][n]//100 
-                x[n1][n] = ((x[n1][n]/100 - x[n1][n]//100))*(5/3) + x[n1][n]//100 #DD
-                n=n+1
-            n=0
-            n1=n1+1
-        return(x)
-    
-    def latlong(x): #lat long paaride eraldamine 
-        paarid={}
-        points=[]
-        points1=[]
-        for i in range(len(x)):
-            cnt=0
-            for y in range(int(len(x[i])/2)):
-                paarid={}
-                paarid["latitude"]=x[i][cnt]
-                paarid["longitude"]=x[i][cnt+1]
-                points.append(paarid)
-                cnt=cnt+2
-            points1.append(points)
-        return(points1)
-    
-    def letters(): #Algfunktsioon, eemaldab tähed ja jätab iga koord. järele 1 tühiku
-        global names
+    def userinput(): 
         global name_general
-        a=[]
-        names=[]
         input("Make sure there are no line breaks in the coordinates (use a website to remove if unsure) \n Press enter to continue ")
         name_general = input("Name your drawing: ")
         separator = input("Are the coordinate pairs separated by spaces or dashes? \n |-- XXXXXN 0XXXXXE XXXXXN 0XXXXXE --| OR |-- XXXXXN 0XXXXXE - XXXXXN 0XXXXXE --|? ")
         n = int(input("How many layers? "))
+        return(teisendus.letters(separator, n))
+    
+    def letters(separator, n): #Algfunktsioon, eemaldab tähed ja jätab iga koord. järele 1 tühiku
+        global names
+        a=[]
+        names=[]
         for i in range(n):
             b = input("Enter coordinates for layer " + str(i+1) + " :")
             name_layer = input("Enter name for layer " + str(i+1) + " :")
@@ -73,13 +49,42 @@ class teisendus:
             n=0
             n1=n1+1
         return(a)
+    
+    def dd(x): #Koordinaatide teisendus DDMMSS -> DD(Decimal Degrees)
+        n=0
+        n1=0
+        for el in x:
+            for b in range(len(x[n1])):
+                x[n1][n] = ((x[n1][n]/100 - x[n1][n]//100))*(5/3) + x[n1][n]//100 #DDM
+                x[n1][n] = ((x[n1][n]/100 - x[n1][n]//100))*(5/3) + x[n1][n]//100 #DD
+                n=n+1
+            n=0
+            n1=n1+1
+        return(x)
+    
+    def latlong(x): #lat long paaride eraldamine 
+        paarid={}
+        points=[]
+        points1=[]
+        for i in range(len(x)):
+            cnt=0
+            for y in range(int(len(x[i])/2)):
+                paarid={}
+                paarid["latitude"]=x[i][cnt]
+                paarid["longitude"]=x[i][cnt+1]
+                points.append(paarid)
+                cnt=cnt+2
+            points1.append(points)
+        return(points1)
+    
 def fileoutput(content):
-    f = open(name_general+".txt", "w")
-    f.write(json.dumps(content, indent=4))
-    f.close()
+    if fileoutput == True:
+        f = open(name_general+".json", "w")
+        f.write(json.dumps(content, indent=4))
+        f.close()
     return 
 #----------------------------------------
-tase1=teisendus.latlong(teisendus.dd(teisendus.makefloat(teisendus.letters())))
+tase1=teisendus.latlong(teisendus.dd(teisendus.makefloat(teisendus.userinput())))
 drawings1=[]
 for i in range(len(tase1)): #Iga layeri kohta eraldi andmed, for loopiga lisatakse iga kiht eraldi
     drawing = {
