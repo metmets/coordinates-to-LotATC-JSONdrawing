@@ -1,7 +1,6 @@
-#421550N 0430700E 421309N 0430714E 421610N 0424835E 422347N 0423643E 421550N 0430700E
-fileoutput = False
-linecolor = "#ffff0000"
-linewidth = 1
+fileoutput = False #Set this to true if you want the JSON file to be auto-generated. Does not work in online compilers/intrepreters.
+linecolor = "#ffff0000" #Select the line color in hex
+linewidth = 1 #Set the line 
 #-------------------------------------------------
 import json
 class teisendus:
@@ -13,7 +12,7 @@ class teisendus:
         n = int(input("How many layers? "))
         return(teisendus.letters(separator, n))
     
-    def letters(separator, n): #Algfunktsioon, eemaldab tähed ja jätab iga koord. järele 1 tühiku
+    def letters(separator, n): #Removes letters and unnecessary spaces.
         global names
         a=[]
         names=[]
@@ -39,7 +38,7 @@ class teisendus:
                 print("Unknown separator!")
         return(a)
     
-    def makefloat(a): #Ujuvkomaarvuks 
+    def makefloat(a): #Makes every coordinate into float 
         n=0
         n1=0
         for el in a:
@@ -50,7 +49,7 @@ class teisendus:
             n1=n1+1
         return(a)
     
-    def dd(x): #Koordinaatide teisendus DDMMSS -> DD(Decimal Degrees)
+    def dd(x): #DDMMSS -> DD(Decimal Degrees)
         n=0
         n1=0
         for el in x:
@@ -62,7 +61,7 @@ class teisendus:
             n1=n1+1
         return(x)
     
-    def latlong(x): #lat long paaride eraldamine 
+    def latlong(x): #lat long pairs separation 
         paarid={}
         points=[]
         points1=[]
@@ -86,7 +85,7 @@ def fileoutput(content):
 #----------------------------------------
 tase1=teisendus.latlong(teisendus.dd(teisendus.makefloat(teisendus.userinput())))
 drawings1=[]
-for i in range(len(tase1)): #Iga layeri kohta eraldi andmed, for loopiga lisatakse iga kiht eraldi
+for i in range(len(tase1)): #add layer data to every layer
     drawing = {
     "author": "",
     "brushStyle": 1,
