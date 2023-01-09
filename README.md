@@ -1,20 +1,22 @@
-This code converts takes in coordinates of a drawing (in XXXXXXN/S XXXXXXXW/E etc) and converts it into a LotAtc drawing. This code supports multiple layers in one drawing - for drawing different sectors in an airspace.
-
-Simply find the things you want to draw (usually from an AIP), example: 414217N 0450126E - 414340N 0450353E - 413901N 0452757E - 413756N 0452930E - 413701N 0453109E - 413622N 0453301E - 413535N 0454349E - 412122N 0454200E - then along the state border - 412804N 0451543E - 
-413110N 0451526E - 414217N 0450126E.
-Remove any text ("then along the state border") and any line breaks (there are websites that do that).
-Run the code and follow the instructions from there. 
-
 # Coordinates to LotATC drawing
-This code takes in coordinates of a drawing (in DDMMSSN/S DDDMMSSW/E etc) and converts it into a LotAtc drawing. This code supports multiple layers in one drawing - useful for drawing different sectors in an airspace.
+This code takes in coordinates of a drawing (in DDMMSSN/S DDDMMSSW/E etc) and converts it into a [LotAtc](https://www.lotatc.com/) drawing. This code supports multiple layers in one drawing - useful for drawing different sectors in an airspace.
+Currently the code only creates lines (no polygons, circles etc).
 
 # How to run?
 **If you are familiar with running python scripts then you can skip this part.** 
+
 If you don't have python installed on your computer, you can use an online interpreter, [such as this one](https://www.online-python.com/). Simply copy the code from [Coordinates_to_JSON_for_LOTATC.py](https://github.com/metmets/coordinates-to-LotATC-JSONdrawing/blob/main/Coordinates_to_JSON_for_LOTATC.py), paste it into the interpreter and run it.
 # How to use?
+tl;dr:
+1.	Find the coordinates of the layers
+2.	Remove any unnecessary text (keep N/S and W/E at the end of a coordinate) and line breaks
+3.	Run the code and follow the instructions
+4.	Save the output as a .json file and open it in LotATC
 ## Coordinate preparation
 
- Find the airspace you want to draw. In this example I will use Batumi TMA. ![enter image description here](https://raw.githubusercontent.com/metmets/coordinates-to-LotATC-JSONdrawing/main/img/Screenshot%202023-01-09%20221336.png)
+Find the airspace you want to draw. In this example I will use Batumi TMA. ![enter image description here](https://raw.githubusercontent.com/metmets/coordinates-to-LotATC-JSONdrawing/main/img/Screenshot%202023-01-09%20221336.png)
+
+Note that in BATUMI TMA SEC2 the coordinate pairs are separated by spaces, so we'll need to add the dashes between the pairs.
 
 The TMA is made up of three parts - the main part, and two sectors. So in total we have three layers to our drawing. First of all **remove all text  and line breaks from the coordinates**.
 So now we have: 
@@ -29,12 +31,24 @@ So now we have:
 
 **BATUMI TMA SECTOR 2**:
 
-420819N 0410250E 415659N 0414755E 414544N 0415223E 413240N 0414245E 413100N 0413255E 413600N 0411655E 414151N 0405843E 420426N 0405703E 420819N 0410250E
+420819N 0410250E - 415659N 0414755E - 414544N 0415223E - 413240N 0414245E - 413100N 0413255E - 413600N 0411655E - 414151N 0405843E - 420426N 0405703E - 420819N 0410250E
 ## Running the code
 Before running you can set the line color and width at the start of the code. Also if you are running this on your computer (not online) you can set *fileoutput = True*, that way the program will output the drawing JSON file. 
 
-![enter image description here](https://raw.githubusercontent.com/metmets/coordinates-to-LotATC-JSONdrawing/main/img/1.gif)
+First of all enter the name for the whole drawing and enter whether the coordinate pairs are separated by spaces or dashes (entering either "-" or "dashes" works, same with spaces)
 
-First of all enter the name for the whole drawing and enter whether the coordinate pairs are separated by spaces or dashes. 
+![enter image description here](https://raw.githubusercontent.com/metmets/coordinates-to-LotATC-JSONdrawing/main/img/1.gif)
+ 
+ Now just follow the instructions. For every layer it will ask you it's coordinates and name. Do that with every layer and it should output the JSON data
 
 ![enter image description here](https://github.com/metmets/coordinates-to-LotATC-JSONdrawing/blob/main/img/2.gif)
+
+Once you have the data, just open a notepad file, paste it there and save it as a .json file. 
+
+Now just open the .json file in LotATC as a drawing.
+![enter image description here](https://github.com/metmets/coordinates-to-LotATC-JSONdrawing/blob/main/img/3.gif?raw=true)
+
+And that's it. 
+
+I'm very new to programming so if you think that my code is crap then you're most ~~likely~~ completely right. 
+At least it works (at least i really really hope).
