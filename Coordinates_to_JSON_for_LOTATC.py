@@ -24,14 +24,18 @@ class teisendus:
                 b=b.replace(" ","")
                 b=b.replace("-", " ")
                 b=b.replace("N", " ")
+                #b=b.replace("S", " ")
                 b=b.replace("E", " ")
+                #b=b.replace("W", " ")
                 koord=b.split()
                 a.append(koord)
             elif separator=="dashes" or separator=="-":
                 b=b.replace(" ","")
                 b=b.replace("-", " ")
                 b=b.replace("N", " ")
+                #b=b.replace("S", " ")
                 b=b.replace("E", "")
+                #b=b.replace("W", "")
                 koord=b.split()
                 a.append(koord)
             else:
