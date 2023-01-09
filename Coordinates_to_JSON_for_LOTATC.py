@@ -12,7 +12,7 @@ class teisendus:
         n = int(input("How many layers? "))
         return(teisendus.letters(separator, n))
     
-    def letters(separator, n): #Removes letters and unnecessary spaces.
+    def letters(separator, n): #Removes letters and unnecessary spaces, formats it so there is one space between every coordinate.
         global names
         a=[]
         names=[]
