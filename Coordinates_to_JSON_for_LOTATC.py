@@ -14,28 +14,34 @@ class teisendus:
     
     def letters(separator, n): #Removes letters and unnecessary spaces, formats it so there is one space between every coordinate.
         global names
+        global sphere
+        sphere = [0, 0]
         a=[]
         names=[]
         for i in range(n):
             b = input("Enter coordinates for layer " + str(i+1) + " :")
             name_layer = input("Enter name for layer " + str(i+1) + " :")
             names.append(name_layer)
+            if "S" in b: #
+                sphere[0]=1
+            if "W" in b:
+                sphere[1]=1
             if separator=="spaces" or separator==" ":
                 b=b.replace(" ","")
                 b=b.replace("-", " ")
                 b=b.replace("N", " ")
-                #b=b.replace("S", " ")
+                b=b.replace("S", " ")
                 b=b.replace("E", " ")
-                #b=b.replace("W", " ")
+                b=b.replace("W", " ")
                 koord=b.split()
                 a.append(koord)
             elif separator=="dashes" or separator=="-":
                 b=b.replace(" ","")
                 b=b.replace("-", " ")
                 b=b.replace("N", " ")
-                #b=b.replace("S", " ")
+                b=b.replace("S", " ")
                 b=b.replace("E", "")
-                #b=b.replace("W", "")
+                b=b.replace("W", "")
                 koord=b.split()
                 a.append(koord)
             else:
@@ -65,7 +71,7 @@ class teisendus:
             n1=n1+1
         return(x)
     
-    def latlong(x): #lat long pairs separation 
+    def latlong(x): #lat long pairs separation
         paarid={}
         points=[]
         points1=[]
@@ -73,8 +79,14 @@ class teisendus:
             cnt=0
             for y in range(int(len(x[i])/2)):
                 paarid={}
-                paarid["latitude"]=x[i][cnt]
-                paarid["longitude"]=x[i][cnt+1]
+                if sphere[0]==1: #checks if coordinates were in the S or W hemispheres, adds - to coordinate where necessary 
+                    paarid["latitude"]=-1*(x[i][cnt]) #southern hemisphere
+                else:
+                    paarid["latitude"]=x[i][cnt] #North
+                if sphere[1]==1:
+                    paarid["longitude"]=-1*(x[i][cnt+1]) #West
+                else:
+                    paarid["longitude"]=x[i][cnt+1] #East
                 points.append(paarid)
                 cnt=cnt+2
             points1.append(points)
