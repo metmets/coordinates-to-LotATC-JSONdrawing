@@ -55,4 +55,4 @@ I'm very new to programming so if you think that my code is crap then you're mos
 At least it works (at least i really really hope).
 
 # Limitations
-Currenlty the coordinates in the drawing cannot cross the equator nor the prime meridian. As there aren't any dcs maps that cross them I don't see this as a big issue.
+Currently the coordinates in the drawing cannot cross the equator nor the prime meridian. As there aren't any dcs maps that cross them I don't see this as a big issue.
