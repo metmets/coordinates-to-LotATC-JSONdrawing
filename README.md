@@ -22,11 +22,19 @@ So now we have:
 **BATUMI TMA**:
 
 420819N 0410250E - 415659N 0414755E - 413128N 0415756E - 413100N 0413255E - 413600N 0411655E - 414151N 0405843E - 420426N 0405703E - 420819N 0410250E
+
 **BATUMI TMA SECTOR 1**:
 
 414544N 0415223E-413128N 0415756E - 413100N 0413255E - 413240N 0414245E - 414544N 0415223E
+
 **BATUMI TMA SECTOR 2**:
 
 420819N 0410250E 415659N 0414755E 414544N 0415223E 413240N 0414245E 413100N 0413255E 413600N 0411655E 414151N 0405843E 420426N 0405703E 420819N 0410250E
 ## Running the code
+Before running you can set the line color and width at the start of the code. Also if you are running this on your computer (not online) you can set *fileoutput = True*, that way the program will output the drawing JSON file. 
 
+![enter image description here](https://raw.githubusercontent.com/metmets/coordinates-to-LotATC-JSONdrawing/main/img/1.gif)
+
+First of all enter the name for the whole drawing and enter whether the coordinate pairs are separated by spaces or dashes. 
+
+![enter image description here](https://github.com/metmets/coordinates-to-LotATC-JSONdrawing/blob/main/img/2.gif)
