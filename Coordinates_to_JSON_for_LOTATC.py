@@ -6,7 +6,7 @@ import json
 class teisendus:
     def userinput(): 
         global name_general
-        input("Make sure there are no line breaks in the coordinates (use a website to remove if unsure) \n Press enter to continue ")
+        input("Make sure there's no unnecessary text or line breaks in the coordinates (use a website to remove if unsure) \n Press enter to continue ")
         name_general = input("Name your drawing: ")
         separator = input("Are the coordinate pairs separated by spaces or dashes? \n |-- XXXXXN 0XXXXXE XXXXXN 0XXXXXE --| OR |-- XXXXXN 0XXXXXE - XXXXXN 0XXXXXE --|? ")
         n = int(input("How many layers? "))
