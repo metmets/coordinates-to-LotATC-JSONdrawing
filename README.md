@@ -53,3 +53,6 @@ And that's it.
 
 I'm very new to programming so if you think that my code is crap then you're most ~~likely~~ completely right. 
 At least it works (at least i really really hope).
+
+#Limitations
+Currenlty the coordinates in the drawing cannot cross the equator or prime meridian. As there aren't cross them I don't see this as a big issue.
