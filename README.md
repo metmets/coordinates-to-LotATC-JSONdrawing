@@ -3,7 +3,7 @@ This code takes in coordinates (in DDMMSSN/S DDDMMSSW/E etc) and converts it int
 
 Currently the code only creates lines (no polygons, circles etc).
 
-Disclaimer: I'm very new to programming, so the fact that this code even runs is a feat itself.
+Disclaimer: I'm very new to programming, so the fact that this code even runs is a feat itself. Also please mind any spelling mistakes as English is not my first language. 
 
 # How to run?
 **If you are familiar with running python scripts then you can skip this part.** 
