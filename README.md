@@ -3,6 +3,8 @@ This code takes in coordinates (in DDMMSSN/S DDDMMSSW/E etc) and converts it int
 
 Currently the code only creates lines (no polygons, circles etc).
 
+Disclaimer: I'm very new to programming, so the fact that this code even runs is a feat itself.
+
 # How to run?
 **If you are familiar with running python scripts then you can skip this part.** 
 
@@ -50,9 +52,6 @@ Now just open the .json file in LotATC as a drawing.
 ![enter image description here](https://github.com/metmets/coordinates-to-LotATC-JSONdrawing/blob/main/img/3.gif?raw=true)
 
 And that's it. 
-
-I'm very new to programming so if you think that my code is crap then you're most ~~likely~~ completely right. 
-At least it works (at least i really really hope).
 
 # Limitations
 Currently the coordinates in the drawing cannot cross the equator nor the prime meridian. As there aren't any dcs maps that cross them I don't see this as a big issue.
