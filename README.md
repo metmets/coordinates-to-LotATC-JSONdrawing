@@ -16,6 +16,7 @@ tl;dr:
 3.	Run the code and follow the instructions
 4.	Save the output as a .json file and open it in LotATC
 ## Coordinate preparation
+Currently the code works with coordinates in DDMMSS N/S DDDMMSS W/E format. Coordinate pairs can either be separated by spaces or dashes.
 
 Find the airspace you want to draw. In this example I will use Batumi TMA. ![enter image description here](https://raw.githubusercontent.com/metmets/coordinates-to-LotATC-JSONdrawing/main/img/Screenshot%202023-01-09%20221336.png)
 
