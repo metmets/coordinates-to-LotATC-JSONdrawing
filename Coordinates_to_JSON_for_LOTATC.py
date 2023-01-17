@@ -92,7 +92,6 @@ class conversion:
                 points.append(pairs)
                 cnt=cnt+2
             points1.append(points)
-        print(json.dumps(points1, indent=4)) #debug
         return(points1)
     
 def fileoutput(content):
