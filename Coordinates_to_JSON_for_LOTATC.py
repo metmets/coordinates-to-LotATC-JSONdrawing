@@ -77,6 +77,7 @@ class conversion:
         points1=[]
         for i in range(len(x)):
             cnt=0
+            points=[]
             for y in range(int(len(x[i])/2)):
                 pairs={}
                 if sphere[0]==1: #checks if coordinates were in the S or W hemispheres, multiplies coordinate with -1 where needed.
@@ -136,3 +137,4 @@ main_drawing=mainfile(datatodrawing(conversion.latlong(conversion.dd(conversion.
 fileoutput(main_drawing)
 print(json.dumps(main_drawing, indent=4))
 input("Save the text above as a .json file and open it as a drawing in lotatc") 
+
