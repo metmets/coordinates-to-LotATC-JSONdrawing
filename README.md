@@ -1,7 +1,7 @@
 # Coordinates to LotATC drawing
 This code takes in coordinates (in DDMMSSN/S DDDMMSSW/E etc) and converts it into a [LotAtc](https://www.lotatc.com/) drawing. This code supports multiple layers in one drawing - useful for drawing different sectors in an airspace.
 
-Currently the code only creates lines (no polygons, circles etc).
+Currently the code only creates lines or polygons (no circles etc).
 
 Disclaimer: I'm very new to programming, so the fact that this code even runs is a feat itself. Also please mind any spelling mistakes as English is not my first language. 
 
