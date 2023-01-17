@@ -69,6 +69,7 @@ class conversion:
                 n=n+1
             n=0
             n1=n1+1
+        print(x) #debug
         return(x)
     
     def latlong(x): #lat long pairs separation
@@ -91,10 +92,11 @@ class conversion:
                 points.append(pairs)
                 cnt=cnt+2
             points1.append(points)
+        print(json.dumps(points1, indent=4)) #debug
         return(points1)
     
 def fileoutput(content):
-    if fileoutput == True:
+    if fileoutput:
         f = open(name_general+".json", "w")
         f.write(json.dumps(content, indent=4))
         f.close()
@@ -137,4 +139,3 @@ main_drawing=mainfile(datatodrawing(conversion.latlong(conversion.dd(conversion.
 fileoutput(main_drawing)
 print(json.dumps(main_drawing, indent=4))
 input("Save the text above as a .json file and open it as a drawing in lotatc") 
-
