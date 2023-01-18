@@ -1,6 +1,7 @@
 fileoutput = False #Set this to true if you want the JSON file to be auto-generated. Does not work in online compilers/intrepreters.
 linecolor = "#ffff0000" #Select the line color in hex
-linewidth = 1 #Set the line 
+linewidth = 1 #Set the line width
+drawingtype = "line" #"line" for line, "polygon" for polygon.
 #-------------------------------------------------
 import json
 class conversion:
@@ -93,7 +94,7 @@ class conversion:
             points1.append(points)
         return(points1)
     
-def fileoutput(content):
+def FileOutput(content):
     if fileoutput:
         f = open(name_general+".json", "w")
         f.write(json.dumps(content, indent=4))
@@ -112,7 +113,7 @@ def datatodrawing(content):
         "name": names[i],
         "shared": False,
         "timestamp": "",
-        "type": "line"
+        "type": drawingtype
         }
         drawing["points"] = content[i]
         drawings.append(drawing)
@@ -134,6 +135,6 @@ def mainfile(drawings):
     return main_data
 #----------------------------------------
 main_drawing=mainfile(datatodrawing(conversion.latlong(conversion.dd(conversion.makefloat(conversion.userinput())))))
-fileoutput(main_drawing)
+FileOutput(main_drawing)
 print(json.dumps(main_drawing, indent=4))
 input("Save the text above as a .json file and open it as a drawing in lotatc") 
