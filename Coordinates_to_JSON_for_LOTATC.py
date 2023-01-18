@@ -20,8 +20,8 @@ class conversion:
         a=[]
         names=[]
         for i in range(n):
-            b = input("Enter coordinates for layer " + str(i+1) + " :")
-            name_layer = input("Enter name for layer " + str(i+1) + " :")
+            b = input("Enter coordinates for layer " + str(i+1) + " :" )
+            name_layer = input("Enter name for layer " + str(i+1) + " : ")
             names.append(name_layer)
             if "S" in b: #Checks if "S" is in the inputted coordinates. 
                 sphere[0]=1
