@@ -69,7 +69,6 @@ class conversion:
                 n=n+1
             n=0
             n1=n1+1
-        print(x) #debug
         return(x)
     
     def latlong(x): #lat long pairs separation
